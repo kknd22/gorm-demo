@@ -6,8 +6,8 @@ import spock.lang.Specification
 /**
  * See the API for {@link grails.test.mixin.web.ControllerUnitTestMixin} for usage instructions
  */
-@TestFor(JunkController)
-class JunkControllerSpec extends Specification {
+@TestFor(AController)
+class AControllerSpec extends Specification {
 
     def setup() {
     }
@@ -16,7 +16,5 @@ class JunkControllerSpec extends Specification {
     }
 
     void "test something"() {
-		def p = new OneToManyOwner(otmoName : "Owner name 1")
-		println p.otmoName
     }
 }
