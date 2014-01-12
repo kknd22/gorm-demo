@@ -1,0 +1,1 @@
+curl -v -H "Content-Type: application/json" X POST -d "@createOwner.json" http://localhost:8080/gorm-demo/a/save
