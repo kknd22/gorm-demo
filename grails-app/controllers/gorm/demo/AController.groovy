@@ -59,6 +59,8 @@ class AController {
 		def o = new OneToManyOwner(request.GSON)
 		//o.properties = request.GSON
 		o.save()
+		
+		
 		response.contentType = "application/json"
 		render o as GSON
 	}
