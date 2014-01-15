@@ -17,20 +17,26 @@ class AController {
 		o.slaves << s2
 		
 		o.save(flush : true)
-	/*
-	
-
-		def p = new OneToManyParent(otmp: "parent 1")
-		def k1 = new OneToManyChild(otmc: "kid 1")
-		def k2 = new OneToManyChild(otmc: "kid 2")
-		p.kids = new HashSet()
-		p.kids.add(k1)
-		p.kids.add(k2)
 		
-		p.save(flush : true)
-	*/	
+		def ma1 = new ManyToManyA(mma: "mma 1")
+		def ma2 = new ManyToManyA(mma: "mma 2")
+		def mb1 = new ManyToManyB(mmb: "mmb 1")
+		def mb2 = new ManyToManyB(mmb: "mmb 2")
+		
+		ma1.addToBs(mb1).addToBs(mb2)
+		ma2.addToBs(mb1)
+		
+		ma1.save(flush: true)
+		ma2.save(flush: true)
+		def pma1 = ManyToManyA.list().get(0)
+		def pma2 = ManyToManyA.list().get(1)
+		
+		def pmb1 = ManyToManyB.list().get(0)
+		def pmb2 = ManyToManyB.list().get(1)
+		
 		response.contentType = "application/json"
-		render o as GSON 
+		//render ([] << pma1 << pma2 as GSON) 
+		render ([] << pmb1 << pmb2 as GSON) 
 	}
 
 	def owners() {

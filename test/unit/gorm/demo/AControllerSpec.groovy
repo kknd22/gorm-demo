@@ -16,5 +16,10 @@ class AControllerSpec extends Specification {
     }
 
     void "test something"() {
+		 setup:
+		  mockFor(String)
+		 expect:
+		   1 == 1 
+		  
     }
 }
