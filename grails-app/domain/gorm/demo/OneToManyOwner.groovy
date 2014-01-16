@@ -3,13 +3,14 @@ package gorm.demo
 class OneToManyOwner {
 	String otmoName
 	
-	List slaves
+	List<OneToManySlave> slaves
+	//SortedSet<OneToManySlave> slaves
 	
 	static hasMany = [slaves : OneToManySlave]
 	
 	static mapping = {
 		//slaves column:'OWNER_ID', joinTable: false
-		slaves cascade: 'all-delete-orphan'
+		slaves lazy: false, cascade: 'all-delete-orphan'
 	}
 	
     static constraints = {
