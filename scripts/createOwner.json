@@ -1,1 +1,1 @@
-{"otmoName":"owner 1 CCCCCC","slaves":[{"displayOrder":0,"otmsName":"slave 2"},{"displayOrder":1,"otmsName":"slave 1"}]}
+{"id":1,"slaves":[{"id":1,"displayOrder":0,"sn":"slave 2"},{"id":2,"displayOrder":1,"sn":"slave 1"}],"wn":"owner 1"}
