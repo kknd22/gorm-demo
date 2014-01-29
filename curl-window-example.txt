@@ -1,0 +1,1 @@
+curl --request POST  -H "Content-Type: application/json"  -d "@updateOwner.json" http://localhost:8080/gorm-demo/a/update
