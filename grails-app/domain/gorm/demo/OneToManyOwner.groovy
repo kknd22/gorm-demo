@@ -6,19 +6,19 @@ class OneToManyOwner {
 	//List<OneToManySlave> slaves
 	SortedSet<OneToManySlave> slaves
 
-	/*	
+/*
+ * http://stackoverflow.com/questions/6014484/save-a-model-with-a-relation-onetomany	
+	
 	SortedSet<OneToManySlave> getSlaves() {
 		if (this.slaves==null) 
 			this.slaves=new TreeSet<OneToManySlave>()
-		this.slaves
+		return this.slaves
 	}
-	
 	void setSlaves(SortedSet<OneToManySlave> s) {
 		getSlaves().clear()
 		this.slaves.addAll(s)
 	}
-	*/
-/*
+
  * 
  */
 		static hasMany = [slaves : OneToManySlave]
