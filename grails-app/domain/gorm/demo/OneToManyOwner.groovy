@@ -8,6 +8,7 @@ class OneToManyOwner {
 
 /*
  * http://stackoverflow.com/questions/6014484/save-a-model-with-a-relation-onetomany	
+ * https://www.altamiracorp.com/blog/employee-posts/let-s-play-who-owns
 	
 	SortedSet<OneToManySlave> getSlaves() {
 		if (this.slaves==null) 
