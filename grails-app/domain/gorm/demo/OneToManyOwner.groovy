@@ -5,7 +5,8 @@ class OneToManyOwner {
 	
 	//List<OneToManySlave> slaves
 	SortedSet<OneToManySlave> slaves
-	
+
+	/*	
 	SortedSet<OneToManySlave> getSlaves() {
 		if (this.slaves==null) 
 			this.slaves=new TreeSet<OneToManySlave>()
@@ -16,6 +17,7 @@ class OneToManyOwner {
 		getSlaves().clear()
 		this.slaves.addAll(s)
 	}
+	*/
 /*
  * 
  */
