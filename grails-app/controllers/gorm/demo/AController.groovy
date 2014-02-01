@@ -73,17 +73,23 @@ class AController {
 
 	def update() {
 		def list = OneToManyOwner.list()
-		println "------------->"
+		println "111 ------------->"
 		println list.get(0).dump()
 		println "<<<-------------"
 		
-	    println "params.id is ${request.GSON.id}" 
 
 		def o = new OneToManyOwner(request.GSON)
 		//o.properties = request.GSON
-		o.save(flush:true)
+		println "222 ------------->"
+		println o.dump()
+		println "<<<-------------"
+		
+				o.save(flush:true)
 		
 		def po1 = OneToManyOwner.findByWn("owner 1UUU")
+		println "333 ------------->"
+		println po1.dump()
+		println "<<<-------------"
 		response.contentType = "application/json"
 		render po1 as GSON
 	}
@@ -136,7 +142,7 @@ class AController {
 	 * delete owner to cascade to slave
 	 */
 	def delete() {
-		def p = OneToManyOwner.findByOtmoName("owner 1")
+		def p = OneToManyOwner.get(1)
 		p.delete()
 		
 		response.contentType = "application/json"
@@ -147,7 +153,7 @@ class AController {
 	 * xfer slave from ovwne 1 to owner 2
 	 */
 	def xfer() {
-		def o1 = new OneToManyOwner(otmoName: "owner 10")
+		def o1 = new OneToManyOwner(wn: "owner 10")
 		o1.save()
 		def s = new OneToManySlave(otmsName: "slave 33", displayOrder: 3)
 		def p = OneToManyOwner.findByOtmoName("owner 10")
