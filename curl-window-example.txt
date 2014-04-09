@@ -1,1 +1,5 @@
 curl --request POST  -H "Content-Type: application/json"  -d "@updateOwner.json" http://localhost:8080/gorm-demo/a/update
+
+curl -i -X  POST  -H "Content-Type: application/json"  -d "{'title':'Along Came A Spider2'}" localhost:8080/grails-poc-rest/books
+
+notice: for window you need double quote on the outside, single inside
